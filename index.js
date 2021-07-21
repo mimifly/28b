@@ -4,12 +4,12 @@ const denominator = document.querySelector(".calls-denominator");
 
 // Simulating random
 const allTopic = {
-  Adherence: Math.ceil(Math.random() * 10),
-  "Combination Therapy": Math.ceil(Math.random() * 10),
-  Dosing: Math.ceil(Math.random() * 10),
-  Guidelines: Math.ceil(Math.random() * 10),
-  Safety: Math.ceil(Math.random() * 10),
-  Other: Math.ceil(Math.random() * 3),
+  adherence: Math.ceil(Math.random() * 10),
+  "combination therapy": Math.ceil(Math.random() * 10),
+  dosing: Math.ceil(Math.random() * 10),
+  guidelines: Math.ceil(Math.random() * 10),
+  safety: Math.ceil(Math.random() * 10),
+  other: Math.ceil(Math.random() * 3),
 };
 
 let sumOfAllTopics = Object.values(allTopic).reduce((sum, e) => sum + e);
@@ -63,31 +63,21 @@ const allTopicPercentages = Object.keys(allTopic).reduce(
 // targetting the specific bars and segments
 
 const barAvg = document.querySelector(".bar-avg");
-const avgAdherence = barAvg.querySelector(".bar-segment-adherence");
-const avgCombinationTherapy = barAvg.querySelector(
-  ".bar-segment-combination-therapy"
-);
-const avgDosing = barAvg.querySelector(".bar-segment-dosing");
-const avgGuidelines = barAvg.querySelector(".bar-segment-guidelines");
-const avgSafety = barAvg.querySelector(".bar-segment-safety");
-const avgOther = barAvg.querySelector(".bar-segment-other");
+
+const barAvgSegments = barAvg.querySelectorAll(".bar-segment");
 
 // Setting the bars according to the % values
 
-avgAdherence.style.flex = allTopicPercentages["Adherence"];
-avgCombinationTherapy.style.flex = allTopicPercentages["Combination Therapy"];
-avgDosing.style.flex = allTopicPercentages["Dosing"];
-avgGuidelines.style.flex = allTopicPercentages["Guidelines"];
-avgSafety.style.flex = allTopicPercentages["Safety"];
-avgOther.style.flex = allTopicPercentages["Other"];
+Array.from(barAvgSegments).forEach((segment) => {
+  const dataTopic = segment.getAttribute("data-topic");
+  segment.style.flex = allTopicPercentages[dataTopic];
+});
 
 // setting % for display
 
-avgAdherence.querySelector("span").innerHTML =
-  allTopicPercentages["Adherence"] + "%";
-avgCombinationTherapy.querySelector("span").innerHTML =
-  allTopicPercentages["Combination Therapy"] + "%";
-avgDosing.querySelector("span").innerHTML = allTopicPercentages["Dosing"] + "%";
-avgGuidelines.querySelector("span").innerHTML =
-  allTopicPercentages["Guidelines"] + "%";
-avgSafety.querySelector("span").innerHTML = allTopicPercentages["Safety"] + "%";
+Array.from(barAvgSegments).forEach((segment) => {
+  const dataTopic = segment.getAttribute("data-topic");
+  if (dataTopic === "other") return;
+  segment.querySelector("span").innerHTML =
+    allTopicPercentages[dataTopic] + "%";
+});
