@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>My Insights</title>
+  </head>
+  <body>
+    <div class="helper-global-wrapper">
+      <nav>
+        <h4 class="user-welcome">
+          Welcome, <br />
+          <span class="user-name">Andy Repp</span>
+        </h4>
+        <h4>Metrics</h4>
+        <ul>
+          <li class="nav-focused">Overview</li>
+          <li>Detailing</li>
+          <li>Calls</li>
+        </ul>
+        <h4>Information</h4>
+        <ul>
+          <li>About profiles</li>
+          <li>Detailing targets</li>
+        </ul>
+      </nav>
+      <main>
+        <h1>Overview</h1>
+        <div class="helper-calls-info-wrapper">
+          <section class="next-call">
+            <h2>Next call</h2>
+            <table class="table-next-call">
+              <div class="span-wrapper">
+                <tr>
+                  <th>Date:</th>
+                  <td>
+                    Tomorrow, 3PM <br />
+                    12 November 2017
+                  </td>
+                </tr>
+              </div>
+              <tr>
+                <th>Account:</th>
+                <td>Dr. Clinton Ackerman</td>
+              </tr>
+              <tr>
+                <th>Specialty:</th>
+                <td>
+                  <ul>
+                    <li>Respiratory therapist</li>
+                    <li>Assistive therapy</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Profile:</th>
+                <td>Confident</td>
+              </tr>
+            </table>
+          </section>
+          <section class="calls-this-month">
+            <h2>Calls this month</h2>
+            <div class="calls-progress">
+              <canvas id="callCanvas" width="300" height="300">
+                Your browser does not support the HTML5 canvas tag.</canvas
+              >
+              <div class="calls-progress-text-wrapper">
+                <span class="calls-numerator">21</span
+                ><span class="calls-denominator">/ 28</span>
+              </div>
+            </div>
+          </section>
+        </div>
+        <section class="topic-details-breakdown">
+          <h2>Detailing topic breakdown</h2>
+          <ul>
+            <li class="topic-list-adherence">Adherence</li>
+            <li class="topic-list-combination-therapy">Combination therapy</li>
+            <li class="topic-list-dosing">Dosing</li>
+            <li class="topic-list-guidelines">Guidelines</li>
+            <li class="topic-list-safety">Safety</li>
+            <li class="topic-list-other">Other</li>
+          </ul>
+          <h3>Avg.all</h3>
+          <div class="bar-topic bar-avg">
+            <span class="bar-segment bar-segment-adherence"
+              ><span class="bar-value"></span></span
+            ><span class="bar-segment bar-segment-combination-therapy"
+              ><span class="bar-value"></span
+            ></span>
+            <span class="bar-segment bar-segment-dosing"
+              ><span class="bar-value"></span
+            ></span>
+            <span class="bar-segment bar-segment-guidelines"
+              ><span class="bar-value"></span
+            ></span>
+            <span class="bar-segment bar-segment-safety"
+              ><span class="bar-value"></span
+            ></span>
+            <span class="bar-segment bar-segment-other"></span>
+          </div>
+          <h3>Cautious</h3>
+          <div class="bar-topic bar-cautious">
+            <span class="bar-segment bar-segment-adherence"></span
+            ><span class="bar-segment bar-segment-combination-therapy"></span>
+            <span class="bar-segment bar-segment-dosing"></span>
+            <span class="bar-segment bar-segment-guidelines"></span>
+            <span class="bar-segment bar-segment-safety"></span>
+            <span class="bar-segment bar-segment-other"></span>
+          </div>
+          <h3>Complacent</h3>
+          <div class="bar-topic bar-complacent">
+            <span class="bar-segment bar-segment-adherence"></span
+            ><span class="bar-segment bar-segment-combination-therapy"></span>
+            <span class="bar-segment bar-segment-dosing"></span>
+            <span class="bar-segment bar-segment-guidelines"></span>
+            <span class="bar-segment bar-segment-safety"></span>
+            <span class="bar-segment bar-segment-other"></span>
+          </div>
+          <h3>Confident</h3>
+          <div class="bar-topic bar-confident">
+            <span class="bar-segment bar-segment-adherence"></span
+            ><span class="bar-segment bar-segment-combination-therapy"></span>
+            <span class="bar-segment bar-segment-dosing"></span>
+            <span class="bar-segment bar-segment-guidelines"></span>
+            <span class="bar-segment bar-segment-safety"></span>
+            <span class="bar-segment bar-segment-other"></span>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

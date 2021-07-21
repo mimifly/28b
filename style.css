@@ -1,0 +1,314 @@
+/* RESETS */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+/* VARIABLES */
+:root {
+  /* FONTS */
+  --font-primary: "Roboto", sans-serif;
+  --font-secondary: "Montserrat", sans-serif;
+
+  /* COLOURS */
+  --clr-bg-light: rgb(245, 245, 245);
+  --clr-bg-dark: rgb(51, 51, 51);
+  --clr-neutral-800: rgb(52, 52, 52);
+  --clr-neutral-300: rgb(175, 175, 175);
+  --clr-neutral-200: rgb(221, 221, 221);
+  --clr-neutral-0: rgb(255, 255, 255);
+  --clr-topic-other: rgb(221, 221, 221);
+  --clr-topic-adherence: rgb(26, 141, 221);
+  --clr-topic-combination-therapy: rgb(53, 221, 179);
+  --clr-topic-dosing: rgb(221, 220, 97);
+  --clr-topic-guidelines: rgb(221, 104, 68);
+  --clr-topic-safety: rgb(143, 113, 221);
+}
+
+.helper-global-wrapper {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  max-width: 2050px;
+  margin: 0 auto;
+}
+
+.helper-calls-info-wrapper {
+  display: flex;
+  margin-bottom: 4em;
+  max-width: 1000px;
+  justify-content: space-between;
+}
+
+main {
+  font-family: var(--font-primary);
+  background-color: var(--clr-bg-light);
+  color: var(--clr-neutral-800);
+  width: 100%;
+  padding: 3em 2.5em;
+}
+
+nav {
+  font-family: var(--font-secondary);
+  background-color: var(--clr-bg-dark);
+  color: var(--clr-neutral-0);
+  padding: 4em 0;
+}
+
+.nav-focused {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+nav h4,
+nav li {
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  min-width: 30ch;
+}
+
+nav h4 {
+  font-weight: normal;
+  color: var(--clr-neutral-200);
+  padding-left: 3em;
+  margin-bottom: 1.25em;
+  line-height: 1.5em;
+}
+
+nav ul,
+nav .user-welcome {
+  margin-bottom: 4em;
+}
+
+nav li {
+  padding: 1.5em 0;
+  padding-left: 3em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+nav li:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+nav .user-name {
+  color: var(--clr-neutral-0);
+  font-weight: bold;
+}
+
+h1 {
+  font-family: var(--font-secondary);
+  font-size: 1.75rem;
+  margin-bottom: 2em;
+}
+
+h2,
+table {
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  margin-bottom: 1em;
+}
+
+.table-next-call {
+  border-collapse: collapse;
+  line-height: 1.5em;
+}
+
+.table-next-call th {
+  text-align: left;
+  width: 15ch;
+  vertical-align: top;
+}
+
+.table-next-call td {
+  vertical-align: top;
+  padding-bottom: 0.7em;
+}
+
+.calls-progress {
+  margin-left: 165px;
+  position: relative;
+}
+
+.calls-progress-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+
+.calls-numerator {
+  font-size: 8rem;
+}
+
+.calls-denominator {
+  color: var(--clr-neutral-300);
+  font-size: 2rem;
+  margin-top: -0.75em;
+}
+
+.topic-details-breakdown ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  max-width: 1100px;
+  margin: 2.5em 0;
+}
+
+.topic-details-breakdown li {
+  position: relative;
+  padding-left: 2.25em;
+  font-size: 1.1rem;
+  margin-right: 3em;
+  margin-bottom: 1.5em;
+}
+
+.topic-details-breakdown li::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  left: 0;
+  transform: rotate(45deg);
+}
+
+.topic-details-breakdown .topic-list-adherence::before {
+  background-color: var(--clr-topic-adherence);
+}
+
+.topic-details-breakdown .topic-list-combination-therapy::before {
+  background-color: var(--clr-topic-combination-therapy);
+}
+
+.topic-details-breakdown .topic-list-dosing::before {
+  background-color: var(--clr-topic-dosing);
+}
+
+.topic-details-breakdown .topic-list-guidelines::before {
+  background-color: var(--clr-topic-guidelines);
+}
+
+.topic-details-breakdown .topic-list-safety::before {
+  background-color: var(--clr-topic-safety);
+}
+
+.topic-details-breakdown .topic-list-other::before {
+  background-color: var(--clr-topic-other);
+}
+
+.bar-topic {
+  height: 30px;
+  max-width: 1100px;
+  display: flex;
+  margin: 1.25em 0 1.75em 0;
+}
+
+.bar-segment {
+  height: 100%;
+  flex: 1;
+  cursor: pointer;
+  position: relative;
+}
+
+.bar-segment:first-of-type {
+  border-radius: 8px 0 0 8px;
+}
+
+.bar-segment:last-of-type {
+  border-radius: 0 8px 8px 0;
+}
+
+.bar-segment-adherence {
+  background-color: var(--clr-topic-adherence);
+}
+
+.bar-segment-combination-therapy {
+  background-color: var(--clr-topic-combination-therapy);
+}
+
+.bar-segment-dosing {
+  background-color: var(--clr-topic-dosing);
+}
+
+.bar-segment-guidelines {
+  background-color: var(--clr-topic-guidelines);
+}
+
+.bar-segment-safety {
+  background-color: var(--clr-topic-safety);
+}
+
+.bar-segment-other {
+  background-color: var(--clr-topic-other);
+}
+
+.bar-value {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: 1.25rem;
+  position: absolute;
+  width: 75px;
+  height: 40px;
+  background-color: var(--clr-neutral-0);
+  border-radius: 6px;
+  bottom: -15px;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  box-shadow: 0 3px 6px var(--clr-neutral-300);
+  display: none;
+}
+
+.bar-segment:not(.bar-segment-other):after {
+  display: none;
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 10px;
+  background-color: var(--clr-neutral-0);
+  bottom: -5px;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.bar-avg:hover .bar-value,
+.bar-avg:hover .bar-segment:not(.bar-segment-other):after,
+.bar-avg:focus .bar-value,
+.bar-avg:focus .bar-segment:not(.bar-segment-other):after {
+  display: flex;
+}
+
+@media only screen and (max-width: 1250px) {
+  nav {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .helper-calls-info-wrapper {
+    flex-direction: column;
+    gap: 3em;
+  }
+
+  .calls-progress {
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+  }
+}
